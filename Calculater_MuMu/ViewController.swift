@@ -30,35 +30,38 @@ class ViewController: UIViewController {
     @IBOutlet weak var mult_btn: UIButton!
     @IBOutlet weak var div_btn: UIButton!
 
+    var a : Double!
+    var b : Double!
     @IBAction func Onplus_enter(_ sender: Any) {
-        let a:Double! = Double(input1_txt.text!)
-        let b:Double! = Double(input2_txt.text!)
-        
+       Getvalue()
         result_txt.text = String(a+b)
         
     }
     
     @IBAction func Onminus_enter(_ sender: Any) {
-        let a:Double! = Double(input1_txt.text!)
-        let b:Double! = Double(input2_txt.text!)
+        Getvalue()
         
         result_txt.text = String(a-b)
     }
 
     @IBAction func Onmult_enter(_ sender: Any) {
-        let a:Double! = Double(input1_txt.text!)
-        let b:Double! = Double(input2_txt.text!)
+        Getvalue()
         
         result_txt.text = String(a*b)
     }
     
     @IBAction func Ondiv_enter(_ sender: Any) {
-        let a:Double! = Double(input1_txt.text!)
-        let b:Double! = Double(input2_txt.text!)
+        Getvalue()
         
         result_txt.text = String(a/b)
     }
     
+    func Getvalue() -> Void {
+         a = Double(input1_txt.text!)
+         b = Double(input2_txt.text!)
+        if(a == nil){ a = 0;}
+        if(b == nil){ b = 0;}
+    }
     
 }
 
